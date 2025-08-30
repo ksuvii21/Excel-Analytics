@@ -88,15 +88,15 @@ export const adminAPI = {
 
 // History API
 export const historyAPI = {
-  saveAnalysis: (data) => API.post("/history", data),
-  getUserHistory: (userId) => API.get(`/history/${userId}`),
-  getSummary: (data) => API.post("/history/summary", data),
+  saveAnalysis: (data) => api.post("/history", data),
+  getUserHistory: (userId) => api.get(`/history/${userId}`),
+  getSummary: (data) => api.post("/history/summary", data),
 };
 
 // In your API utility functions, add error handling
 export const getUsers = async () => {
   try {
-    const response = await axios.get('/api/admin/users');
+    const response = await api.get('/admin/users');
     return response;
   } catch (error) {
     if (error.response && error.response.status === 404) {

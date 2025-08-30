@@ -17,12 +17,33 @@ const insightRoutes = require('./src/routes/insightRoutes');
 dotenv.config();
 const app = express();
 
+if (process.env.NODE_ENV !== "production") {
+  require("dotenv").config();
+}
+
 // Middlewares
 app.use(cors({
-  origin: 'https://excel-analytics-zo51.onrender.com',
+  origin: [
+    'https://ksuvii21.github.io', 
+    'https://excel-analytics-zo51.onrender.com'
+  ],
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization']
 }));
+
+const allowList = new Set([
+  process.env.FRONTEND_URL,
+  'https://ksuvii21.github.io', // keep if you need both
+]);
+app.use(cors({
+  origin: (origin, cb) => {
+    if (!origin || allowList.has(origin)) return cb(null, true);
+    return cb(new Error("Not allowed by CORS"));
+  },
+  methods: ['GET','POST','PUT','DELETE','OPTIONS'],
+  allowedHeaders: ['Content-Type','Authorization']
+}));
+
 
 app.use(express.json({ limit: "10mb" }));
 app.use(express.urlencoded({ extended: true, limit: "10mb" }));
@@ -107,3 +128,9 @@ app.use((error, req, res, next) => {
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+console.log("MONGO_URI exists:", !!process.env.MONGO_URI);
+console.log("JWT_SECRET exists:", !!process.env.JWT_SECRET);
+console.log("FRONTEND_URL exists:", !!process.env.FRONTEND_URL);
+console.log("NODE_ENV exists:", !!process.env.NODE_ENV);
+console.log("PORT exists:", !!process.env.PORT);
+console.log("AI_INSIGHTS exists:", !!process.env.AI_INSIGHTS);
