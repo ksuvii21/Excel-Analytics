@@ -17,7 +17,7 @@ export function AuthProvider({ children }) {
 useEffect(() => {
   const token = localStorage.getItem('token');
   const userData = localStorage.getItem('user');
-  const API_BASE = import.meta.env.VITE_API_BASE_URL || "http://localhost:5000";
+  const API_BASE = import.meta.env.VITE_API_BASE_URL || "https://excel-analytics-zo51.onrender.com/api";
 
   if (token && userData) {
     try {
@@ -63,16 +63,16 @@ const login = async (credentials) => {
     });
 
     // Race the fetch against the timeout
-    const response = await Promise.race([
-      fetch('/api/auth/login', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(credentials),
-      }),
-      timeoutPromise
-    ]);
+const response = await Promise.race([
+  fetch(`${API_BASE}/auth/login`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(credentials),
+  }),
+  timeoutPromise
+]);
 
     console.log('AuthContext: Received response, status:', response.status);
     
