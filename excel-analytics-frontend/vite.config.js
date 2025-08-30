@@ -5,12 +5,7 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   base: "/Excel-Analytics/",
   plugins: [react()],
-  server: {
-    proxy: {
-      '/api': {
-        target: 'http://localhost:5000',
-        changeOrigin: true,
-      },
-    },
-  },
+  define: {
+    'import.meta.env.VITE_API_BASE_URL': JSON.stringify("https://excel-analytics-zo51.onrender.com/api")
+  }
 })
