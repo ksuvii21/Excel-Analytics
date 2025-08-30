@@ -13,11 +13,11 @@ export function useAuth() {
 export function AuthProvider({ children }) {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
+  const API_BASE = import.meta.env.VITE_API_BASE_URL || "https://excel-analytics-zo51.onrender.com/api";
 
 useEffect(() => {
   const token = localStorage.getItem('token');
   const userData = localStorage.getItem('user');
-  const API_BASE = import.meta.env.VITE_API_BASE_URL || "https://excel-analytics-zo51.onrender.com/api";
 
   if (token && userData) {
     try {
