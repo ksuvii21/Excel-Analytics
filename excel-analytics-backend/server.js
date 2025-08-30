@@ -24,7 +24,7 @@ if (process.env.NODE_ENV !== "production") {
 // Middlewares
 app.use(cors({
   origin: [
-    'https://ksuvii21.github.io', 
+    'https://ksuvii21.github.io/Excel-Analytics', 
     'https://excel-analytics-zo51.onrender.com'
   ],
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
