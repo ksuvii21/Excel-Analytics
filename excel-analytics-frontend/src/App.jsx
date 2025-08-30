@@ -62,7 +62,7 @@ function RequireRole({ roles, children }) {
 
 export default function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/Excel-Analytics">
       <AuthProvider>
         <Routes>
           {/* Public routes */}
