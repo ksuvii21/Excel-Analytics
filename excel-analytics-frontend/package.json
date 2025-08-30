@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "proxy": "http://localhost:5000",
-  "homepage": "https://ksuvii21.github.io/Excel-Analytics/",
+  "homepage": "https://ksuvii21.github.io/Excel-Analytics",
   "type": "module",
   "scripts": {
     "dev": "vite",
