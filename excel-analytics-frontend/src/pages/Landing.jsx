@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import Footer from '../components/Footer.jsx';
 import { Link } from 'react-router-dom';
+import planet1 from "../assets/planet1.png";
+import planet2 from "../assets/planet2.png";
 import { 
   ArrowRight, LineChart, Home, Info, Wrench, BarChart4, FileSpreadsheet, 
   Lock, Users, Sparkles, PlayCircle, ChevronRight, Download, Upload, 
@@ -171,7 +173,7 @@ export default function Landing() {
           <div className="relative w-full h-full">
             <div className="absolute inset-0 bg-purple-500 rounded-full blur-3xl opacity-20 animate-pulse"></div>
             <img 
-              src={`${import.meta.env.BASE_URL}planet1.png`}
+              src={planet1}
               className="relative z-10 w-full transition-transform duration-1000 hover:scale-105" 
               alt="Decorative planet" 
               style={{ 
@@ -187,7 +189,7 @@ export default function Landing() {
           <div className="relative w-full h-full">
             <div className="absolute inset-0 bg-blue-400 rounded-full blur-3xl opacity-20 animate-pulse"></div>
             <img 
-              src={`${import.meta.env.BASE_URL}planet2.png`}
+              src={planet2}
               className="relative z-10 w-full transition-transform duration-1000 hover:scale-105" 
               alt="Decorative planet" 
               style={{ 
