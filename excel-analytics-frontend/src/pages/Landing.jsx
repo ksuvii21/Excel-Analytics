@@ -171,7 +171,7 @@ export default function Landing() {
           <div className="relative w-full h-full">
             <div className="absolute inset-0 bg-purple-500 rounded-full blur-3xl opacity-20 animate-pulse"></div>
             <img 
-              src="/planet1.png" 
+              src={`${import.meta.env.BASE_URL}planet1.png`}
               className="relative z-10 w-full transition-transform duration-1000 hover:scale-105" 
               alt="Decorative planet" 
               style={{ 
@@ -187,7 +187,7 @@ export default function Landing() {
           <div className="relative w-full h-full">
             <div className="absolute inset-0 bg-blue-400 rounded-full blur-3xl opacity-20 animate-pulse"></div>
             <img 
-              src="/planet2.png" 
+              src={`${import.meta.env.BASE_URL}planet2.png`}
               className="relative z-10 w-full transition-transform duration-1000 hover:scale-105" 
               alt="Decorative planet" 
               style={{ 
