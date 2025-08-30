@@ -74,6 +74,7 @@ export default function App() {
           <Route path="/forgot-password" element={<ForgotPassword />} />
           <Route path="/unauthorized" element={<div>Unauthorized Access</div>} />
           <Route path="/not-found" element={<NotFound />} />
+          <Route path="*" element={<Navigate to="/not-found" replace />} />
           <Route path="/admin" element={<RequireRole roles={['admin','superadmin']}><Admin /></RequireRole>} />
 
           {/* Protected routes with role-based access */}
