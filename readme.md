@@ -56,7 +56,7 @@ The platform emphasizes **data visualization, user management, and real-time ana
 
 ## 📸 Preview
 
-![Portfolio Preview]()
+![Portfolio Preview](https://github.com/ksuvii21/Excel-Analytics/blob/main/excel-analytics-frontend/src/asserts/Preview.png)
 
 ---
 
@@ -64,17 +64,22 @@ The platform emphasizes **data visualization, user management, and real-time ana
 
 ### Frontend
 excel-analytics-frontend/
+
 │-- index.html
 │-- postcss.config.cjs
 │-- tailwind.config.js
 │-- vite.config.js
 │-- .env
 │-- package-lock.json
+
 │-- src/
+
 │ │-- asserts/ # images
+
 │ │-- components/
 │ │ ├─ admin / UserManagement.jsx
 │ │ ├─ superadmin / SystemMetrics.jsx
+
 │ │ ├─ AdminPanel.jsx
 │ │ ├─ ChartCard.jsx
 │ │ ├─ DashboardContent.jsx
@@ -89,25 +94,33 @@ excel-analytics-frontend/
 │ │ ├─ Footer.jsx
 │ │ ├─ StatCard.jsx
 │ │ ├─ SuperAdminRoute.jsx
+
 │ │-- context/AuthContext.jsx
+
 │ │-- hooks/useDashboardData.js
+
 │ │-- layouts/
 │ │ ├─ AdminLayout.jsx
 │ │ ├─ UserLayout.jsx
 │ │ |─ SuperAdminLayout.jsx
 │ │ |─ LayoutSwitcher.jsx
+
 │ │-- pages/
 │ │ ├─ dashboard/UserDashboard.jsx
 │ │ ├─ dashboard/AdminDashboard.jsx
 │ │ ├─ dashboard/SuperAdminDashboard.jsx
+
 │ │ ├─ Login.jsx
 │ │ ├─ Register.jsx
 │ │ ├─ Upload.jsx
 │ │ ├─ Landing.jsx
 │ │ └─ ...
+
 │ │-- routes/AppRoutes.jsx
+
 │ │-- utils/api.js
 │ │-- utils/http.js
+
 │ │-- App.jsx
 │ │-- main.jsx
 │ │-- index.css
@@ -117,32 +130,38 @@ excel-analytics-frontend/
 
 ### Backend
 excel-analytics-backend/
+
 │-- .env
 │-- server.js
 │-- package-lock.json
+
 │-- src/
+
 │ │-- config/db.js
+
 │ │-- controllers/
 │ │ ├─ adminController.js
 │ │ ├─ authController.js
 │ │ ├─ fileController.js
 │ │ ├─ insightController.js
-│ │-- middleware/
+
+│ │-- middleware/  
 │ │ ├─ auth.js
 │ │ ├─ upload.js
 │ │ └─ roles.js
-│ │-- models/
+
+│ │-- models/  
 │ │ ├─ AIInsight.js
 │ │ ├─ File.js
 │ │ ├─ History.js
 │ │ └─ User.js
-│ │-- routes/
+
+│ │-- routes/ 
 │ │ ├─ adminRoutes.js
 │ │ ├─ authRoutes.js
 │ │ ├─ fileRoutes.js
 │ │ ├─ history.js
 │ │ └─ insightRoutes.js
-
 
 ---
 
@@ -161,6 +180,7 @@ cd excel-analytics-backend
 npm install
 cp .env.example .env   # configure DB, JWT secret, etc.
 npm run dev
+```
 
 ### 📊 Usage Workflow
 
